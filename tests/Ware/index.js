@@ -12,7 +12,7 @@ describe('ware', function () {
 
         it('should be chainable', function () {
             var ware= Ware()
-            console.assert(ware.use(noop) == ware);
+            console.assert(ware.use(noop) == ware)
         })
 
         it('should add a middleware to #middlewares', function () {
@@ -31,6 +31,11 @@ describe('ware', function () {
 
     describe('#run', function () {
 
+        it('should be chainable', function () {
+            var ware= Ware()
+            console.assert(ware.use(noop).run(noop) == ware)
+        })
+
         it('should take any number of arguments', function (done) {
             Ware()
                 .use(function (a, b, c, next) {
@@ -46,7 +51,7 @@ describe('ware', function () {
             ;
         })
 
-        it('should jump to done on error', function (done) {
+        it('should invoke callback on error', function (done) {
             var errors = 0
             Ware()
                 .use(function (next) {
@@ -68,7 +73,7 @@ describe('ware', function () {
             ;
         })
 
-        describe('done', function () {
+        describe('callback', function () {
 
             it('should receive an error', function (done) {
                 var error= new Error()
