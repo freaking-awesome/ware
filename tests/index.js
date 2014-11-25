@@ -44,39 +44,11 @@ describe('ware', function () {
             ;
         })
 
-        it('should receive an error', function (done) {
-            var error= new Error()
-            Ware()
-                .use(function (next) {
-                    next(error)
-                })
-                .run(function (err) {
-                    console.assert(err == error)
-                    done()
-                })
-            ;
-        })
-
-        it('should receive arguments', function (done) {
-            Ware()
-                .use(function (a, b, c, next) {
-                    next()
-                })
-                .run('a', 'b', 'c', function (err, a, b, c) {
-                    console.assert(!err)
-                    console.assert('a' == a)
-                    console.assert('b' == b)
-                    console.assert('c' == c)
-                    done()
-                })
-            ;
-        })
-
         it('should jump to done on error', function (done) {
-            var errors = 0;
+            var errors = 0
             Ware()
                 .use(function (next) {
-                    next(new Error())
+                    next(new Error)
                 })
                 .use(function (next) {
                     errors++
@@ -92,6 +64,38 @@ describe('ware', function () {
                     done()
                 })
             ;
+        })
+
+        describe('done', function () {
+
+            it('should receive an error', function (done) {
+                var error= new Error()
+                Ware()
+                    .use(function (next) {
+                        next(error)
+                    })
+                    .run(function (err) {
+                        console.assert(err == error)
+                        done()
+                    })
+                ;
+            })
+
+            it('should receive arguments', function (done) {
+                Ware()
+                    .use(function (a, b, c, next) {
+                        next()
+                    })
+                    .run('a', 'b', 'c', function (err, a, b, c) {
+                        console.assert(!err)
+                        console.assert('a' == a)
+                        console.assert('b' == b)
+                        console.assert('c' == c)
+                        done()
+                    })
+                ;
+            })
+
         })
 
     })
