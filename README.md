@@ -12,14 +12,12 @@ npm test
 
 ## Use
 ```javascript
-
 var Ware= require('ware')
-
-
-
+```
+```
 Ware()
 
-
+    // define
 
     .use(function (a, b, c, next) {
         next()
@@ -49,13 +47,11 @@ Ware()
 
     )
 
-
+    // run
 
     .run('a', 'b', 'c', function (err, a, b, c) {
 
     })
-
-
 
 ;
 
