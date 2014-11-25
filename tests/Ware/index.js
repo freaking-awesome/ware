@@ -1,6 +1,8 @@
-var Ware= require('..')
+var Ware= require('../..')
 
 var noop= function () {}
+
+
 
 describe('ware', function () {
 
