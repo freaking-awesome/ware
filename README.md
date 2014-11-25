@@ -15,7 +15,9 @@ npm test
 
 var Ware= require('ware')
 
-Ware
+
+
+Ware()
 
 
 
