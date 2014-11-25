@@ -14,7 +14,7 @@ npm test
 ```javascript
 var Ware= require('ware')
 ```
-```
+```javascript
 Ware()
 
     // define
