@@ -1,6 +1,6 @@
 /**
  * @module Ware
- * @version 0.1.1
+ * @version 0.1.3
  *
  * @author awsmtek.com
  * @license Public Domain
