@@ -1,0 +1,10 @@
+{
+    "name": "awesome-ware", "version": "0.0.1",
+
+    "scripts": {
+        "test": "node test.js"
+    },
+
+    "author": "awsmtek.com",
+    "license": "public domain"
+}
