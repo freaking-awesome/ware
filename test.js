@@ -46,7 +46,7 @@ ware.use(function (a,b,c, next) {
 })
 
 ware.use(function (a,b,c, next) {
-    console.log('Выполнение подпрограммы №3...')
+    console.log('Выполнение подпрограммы №3...', this.arguments)
     setTimeout(function () {
 
         if (Math.random() < .73) {
@@ -65,7 +65,7 @@ ware.use(function (a,b,c, next) {
 })
 
 ware.use(function (a,b,c, next) {
-    console.log('Выполнение подпрограммы №5...')
+    console.log('Выполнение подпрограммы №5...', this.arguments)
     setTimeout(function () {
 
         if (Math.random() < .73) {
@@ -156,6 +156,6 @@ ware2.use(function (a,b,c, next) {
 // Выполнение подпрограмм.
 //
 
-ware.run(1, 2, 3, function (err) { // выполнение подпрограмм с указанными аргументами и последующий вызов указанной функции с ошибкой или без
-    console.log('Выполнение подпрограмм завершено.', err)
+ware.run(1, 2, 3, function (err, a, b, c) { // выполнение подпрограмм с указанными аргументами и последующий вызов указанной функции с ошибкой или без
+    console.log('Выполнение подпрограмм завершено.', err, a, b, c)
 })
