@@ -29,6 +29,21 @@ describe('ware', function () {
 
     describe('#run', function () {
 
+        it('should take any number of arguments', function (done) {
+            Ware()
+                .use(function (a, b, c, next) {
+                    console.assert('a' == a)
+                    console.assert('b' == b)
+                    console.assert('c' == c)
+                    next()
+                })
+                .run('a', 'b', 'c', function (err, a, b, c) {
+                    console.assert(!err)
+                    done()
+                })
+            ;
+        })
+
         it('should receive an error', function (done) {
             var error= new Error()
             Ware()
@@ -42,16 +57,16 @@ describe('ware', function () {
             ;
         })
 
-        it('should take any number of arguments', function (done) {
+        it('should receive arguments', function (done) {
             Ware()
                 .use(function (a, b, c, next) {
-                    console.assert('a' == a)
-                    console.assert('b' == b)
-                    console.assert('c' == c)
                     next()
                 })
                 .run('a', 'b', 'c', function (err, a, b, c) {
                     console.assert(!err)
+                    console.assert('a' == a)
+                    console.assert('b' == b)
+                    console.assert('c' == c)
                     done()
                 })
             ;
