@@ -1,6 +1,8 @@
 {
-    "name": "ware", "version": "0.0.7",
+    "name": "ware", "version": "0.1.1",
     "description": "Your own middleware layer",
+
+    "repository": "freaking-awesome/ware",
 
     "keywords": [
         "connect", "express", "middleware", "layer"
